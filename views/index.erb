@@ -1,0 +1,15 @@
+<h1>Welcome to Hogwarts</h1>
+
+
+
+
+<h1>All Pizza Orders</h1>
+
+<!-- Loops through each element in the hash(PG Object) uses a placeholder to
+return the pretty_name method in pizza_order-->
+<% @orders.each do |order| %>
+  <p>Name: <%= order.pretty_name() %> </p>
+  <p>Order: <%= order.quantity() %> x <%= order.topping %> </p>
+  <p> <a href="/pizza-orders/<%= order.id %>">Show Order</a> </p>
+  <hr>
+<% end %>

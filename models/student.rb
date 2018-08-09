@@ -2,8 +2,7 @@ require_relative('../db/sql_runner')
 
 class Student
 
-  attr_reader :id
-  attr_accessor :first_name, :second_name, :house_id, :age
+  attr_accessor :id, :first_name, :second_name, :house_id, :age
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
@@ -47,13 +46,6 @@ class Student
     return student
   end
 
-  #
-  # def show_films()
-  #   sql = "SELECT films.* FROM films INNER JOIN tickets ON films.id = tickets.film_id WHERE tickets.customer_id = $1"
-  #   values = [@id]
-  #   films = SqlRunner.run(sql, values)
-  #   return films.map { |film| Film.new(film)}
-  # end
   def house()
     sql = "SELECT houses.* FROM houses INNER JOIN students ON houses.id = students.house_id WHERE students.id = $1"
     values = [@id]

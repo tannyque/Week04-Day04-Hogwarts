@@ -14,6 +14,7 @@ end
 
 #NEW PEEP
 get '/hogwarts/new' do
+  @house = House.all()
   erb (:new)
 end
 
@@ -24,5 +25,5 @@ post '/hogwarts' do
   erb (:create)
 end
 
-binding.pry
-nil
+# binding.pry
+# nil

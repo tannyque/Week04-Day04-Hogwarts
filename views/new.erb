@@ -2,21 +2,20 @@
 
   <label for="first-name"> First Name </label>
   <input id='first-name' type='text' name="first_name" required>
-
+  <br>
   <label for="second-name"> Last Name </label>
   <input id='second-name' type="text" name="second_name" required>
-
-  <label for="house"> Select a house </label>
-  <select id='house' name="house">
-    <option value="Gryffindor">Gryffindor</option>
-    <option value="Ravenclaw">Ravenclaw</option>
-    <option value="Hufflepuff">Hufflepuff</option>
-    <option value="Slytherin">Slytherin</option>
+  <br>
+  <label for="house">Select a house:</label>
+  <select id="house" name="house_id">
+  <% @house.each do |house| %>
+  <option value= "<%= house.id %>"><%= house.name %></option>
+  <% end %>
   </select>
-
+  <br>
   <label for="age"> Age </label>
   <input type="text" name="age" required>
-
+  <br>
   <input type="submit" value="Create Student">
 
 </form>

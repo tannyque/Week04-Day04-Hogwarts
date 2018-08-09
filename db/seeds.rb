@@ -84,5 +84,3 @@ student9 = Student.new({
   'age' => 11
   })
 student9.save()
-binding.pry
-nil

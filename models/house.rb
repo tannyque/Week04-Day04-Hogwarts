@@ -2,8 +2,7 @@ require_relative('../db/sql_runner')
 
 class House
 
-  attr_reader :id
-  attr_accessor :name
+  attr_accessor :id, :name
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
